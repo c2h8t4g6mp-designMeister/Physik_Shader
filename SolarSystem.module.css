@@ -1,0 +1,41 @@
+/* Canvas-Bereich — eigene Höhe, da er nicht mehr in einem height-Container sitzt */
+.container {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+}
+
+/* Buttons – normaler Dokument-Fluss, direkt über dem Canvas */
+.controls {
+  display: flex;
+  gap: 10px;
+  padding: 12px 0 16px;
+  pointer-events: auto;
+}
+
+.btn {
+  background: rgba(8, 8, 15, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(232, 232, 240, 0.55);
+  font-family: "SF Mono", "Fira Mono", "Courier New", monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  padding: 7px 16px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(232, 232, 240, 0.85);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Aktiver Zustand */
+.btn.active {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #e8e8f0;
+}

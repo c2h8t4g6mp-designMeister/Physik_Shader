@@ -1,0 +1,24 @@
+{
+  "name": "shader-physik-playground",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@paper-design/shaders-react": "^0.0.76",
+    "@react-three/fiber": "^9.6.1",
+    "@react-three/rapier": "^2.2.0",
+    "next": "^15.5.19",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.17.6",
+    "@types/three": "^0.184.1",
+    "typescript": "5.8.2"
+  }
+}

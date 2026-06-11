@@ -1,0 +1,195 @@
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Outer container — fills the parent module canvas */
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Render at 50%×50%, scale back up 2× — GPU computes only 25% of pixels */
+.halfRes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  transform: scale(2);
+  transform-origin: top left;
+  overflow: hidden;
+}
+
+/* Fills parent completely, no background */
+.fillAbsolute {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+/* Fills parent completely, black background (for DotOrbit) */
+.fillAbsoluteBlack {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background: #000000;
+}
+
+/* Fills parent with reduced opacity (combined mode) */
+.fillAbsoluteOpacity {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  opacity: 0.6;
+}
+
+/* Invisible overlay for pointer-events management */
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Control slots (currently empty, kept for future use) */
+.topLeft {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  pointer-events: auto;
+}
+.bottomLeft {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  pointer-events: auto;
+}
+.bottomRight {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.topRight {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  pointer-events: auto;
+}
+
+/* Decorative light blobs */
+.blob1 {
+  position: absolute;
+  top: 25%;
+  left: 33%;
+  width: 128px;
+  height: 128px;
+  background: rgba(31, 41, 55, 0.05);
+  border-radius: 50%;
+  filter: blur(64px);
+  animation: pulse ease-in-out infinite;
+}
+.blob2 {
+  position: absolute;
+  bottom: 33%;
+  right: 25%;
+  width: 96px;
+  height: 96px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: pulse ease-in-out infinite;
+}
+.blob3 {
+  position: absolute;
+  top: 50%;
+  right: 33%;
+  width: 80px;
+  height: 80px;
+  background: rgba(17, 24, 39, 0.03);
+  border-radius: 50%;
+  filter: blur(24px);
+  animation: pulse ease-in-out infinite;
+}
+
+/* Color picker UI */
+.colorPickerLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: "SF Mono", "Fira Mono", "Courier New", monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  pointer-events: auto;
+}
+
+.colorPickerRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.colorInput {
+  width: 28px;
+  height: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  background: none;
+  cursor: pointer;
+  padding: 1px;
+}
+
+.colorHex {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Center text overlay */
+.centerOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.centerText {
+  text-align: center;
+  font-family: "SF Mono", "Fira Mono", monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+.row {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.copyBtn {
+  pointer-events: auto;
+  opacity: 0.3;
+  transition: opacity 0.15s ease;
+  color: rgba(255, 255, 255, 0.6);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.copyBtn:hover {
+  opacity: 0.6;
+  color: rgba(255, 255, 255, 0.8);
+}

@@ -1,0 +1,19 @@
+# Abhängigkeiten (werden via "npm install" neu geladen)
+node_modules/
+
+# Next.js Build-Output
+.next/
+out/
+
+# Umgebungsvariablen (können Passwörter enthalten)
+.env
+.env.local
+.env*.local
+
+# System-Dateien
+.DS_Store
+Thumbs.db
+
+# Editor-Ordner
+.vscode/
+.idea/

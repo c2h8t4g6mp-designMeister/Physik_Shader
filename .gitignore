@@ -5,6 +5,9 @@ node_modules/
 .next/
 out/
 
+# Netlify
+.netlify/
+
 # Umgebungsvariablen (können Passwörter enthalten)
 .env
 .env.local
@@ -17,3 +20,4 @@ Thumbs.db
 # Editor-Ordner
 .vscode/
 .idea/
+node_modules

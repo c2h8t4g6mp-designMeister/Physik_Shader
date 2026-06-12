@@ -122,9 +122,7 @@ export function EnergyRing({
 // --- Demo ---
 
 export default function DemoOne() {
-  const [intensity, setIntensity] = useState(1.5)
   const [speed, setSpeed] = useState(1.0)
-  const [isInteracting, setIsInteracting] = useState(false)
   const [activeEffect, setActiveEffect] = useState("mesh")
   const [baseColor, setBaseColor] = useState("#1d1d1d")
   return (
@@ -144,10 +142,9 @@ export default function DemoOne() {
           <div className={s.fillAbsoluteBlack}>
             <DotOrbit
               style={{ width: "100%", height: "100%" }}
-              dotColor="#333333"
-              orbitColor="#1a1a1a"
+              colors={["#333333"]}
+              colorBack="#1a1a1a"
               speed={speed}
-              intensity={intensity}
             />
           </div>
         </div>
@@ -159,15 +156,13 @@ export default function DemoOne() {
             className={s.fillAbsolute}
             colors={["#000000", "#1a1a1a", "#333333", "#ffffff"]}
             speed={speed * 0.5}
-            wireframe="true"
           />
           <div className={s.fillAbsoluteOpacity}>
             <DotOrbit
               style={{ width: "100%", height: "100%" }}
-              dotColor="#333333"
-              orbitColor="#1a1a1a"
+              colors={["#333333"]}
+              colorBack="#1a1a1a"
               speed={speed * 1.5}
-              intensity={intensity * 0.8}
             />
           </div>
         </div>
